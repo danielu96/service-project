@@ -67,7 +67,7 @@
 
   @layer base {
     .fanart {
-      background: url("PH00496.jpg");
+      background: url("bg2.jpg");
       height: fit-content
     }
   }
