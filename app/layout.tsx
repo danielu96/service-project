@@ -21,8 +21,9 @@ export default function RootLayout({
 
     <html lang='en' suppressHydrationWarning>
       <body className={inter.className}>
-
-        <Navbar />
+        <div className="container fanart py-10" >
+          <Navbar />
+        </div>
         <main className='container py-10'>{children}</main>
 
       </body>
