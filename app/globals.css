@@ -2,30 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -88,7 +65,25 @@ body {
     @apply border-border;
   }
 
+  @layer base {
+    .fanart {
+      background: url("bg2.jpg");
+      height: fit-content
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
   }
+
+  @layer components {
+    .container {
+      @apply mx-auto max-w-6xl xl:max-w-full max-h-max px-8;
+    }
+
+    .bg-image {
+      @apply fanart;
+    }
+  }
+
 }
