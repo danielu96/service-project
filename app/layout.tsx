@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/navbar/Navbar';
+import Providers from "./providers";
 
 
 
@@ -21,11 +22,12 @@ export default function RootLayout({
 
     <html lang='en' suppressHydrationWarning>
       <body className={inter.className}>
-        <div className="container fanart py-10" >
-          <Navbar />
-        </div>
-        <main className='container py-10'>{children}</main>
-
+        <Providers>
+          <div className="container fanart py-10" >
+            <Navbar />
+          </div>
+          <main className='container py-10'>{children}</main>
+        </Providers>
       </body>
     </html>
 
