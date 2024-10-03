@@ -8,8 +8,8 @@ import Navbar from '@/components/navbar/Navbar';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Reservation Next App",
-  description: "Reservation by create next app",
+  title: "Service Next App",
+  description: "Service app",
 };
 
 export default function RootLayout({
