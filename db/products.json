@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "John",
+        "tagline": "Doe",
+        "price": "20",
+        "image": "https://mugstore.pl/Kubek-kwiaty.png"
+    },
+    {
+        "id": "2",
+        "name": "Jane",
+        "tagline": "Smith",
+        "price": "30",
+        "image": "https://mugstore.pl/Kubek-kwiaty.png"
+    },
+    {
+        "id": "3",
+        "name": "Bob",
+        "tagline": "Johnson",
+        "price": "50",
+        "image": "https://mugstore.pl/Kubek-kwiaty.png"
+    }
+]

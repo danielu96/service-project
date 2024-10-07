@@ -1,9 +1,18 @@
 
+import ProductContainer from '@/components/home/ProductContainer';
 import React from 'react'
 
-function HomePage() {
+function HomePage({
+  searchParams,
+}: {
+  searchParams: { search?: string };
+}) {
   return (
-    <div className='font-bold capitalize mx-auto'>HomePage</div>
+    <section className='font-bold capitalize mx-auto'>
+
+      <ProductContainer search={searchParams.search} />
+
+    </section>
   )
 }
 
