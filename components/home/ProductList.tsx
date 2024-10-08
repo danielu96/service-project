@@ -4,7 +4,7 @@ import ProductCard from '../card/ProductCard';
 
 function ProductList({ products }: { products: ProductCardProps[] }) {
     return (
-        <section>
+        <section className='my-5 mx-8'>
             {products.map((product) => {
                 return (
                     <ProductCard key={product.id} product={product}></ProductCard>
