@@ -1,3 +1,6 @@
+'use server';
+import properties from '../db/products.json'
+
 export const fetchProperties = async ({
     search = '',
     category,
@@ -5,27 +8,7 @@ export const fetchProperties = async ({
     search?: string;
     category?: string;
 }) => {
-    const properties =
-        [
-            {
-                id: "1",
-                name: "John",
-                tagline: "Doe",
-                image: "https://mugstore.pl/Kubek-kwiaty.png",
-            },
-            {
-                id: "2",
-                name: "Jane",
-                tagline: "Smith",
-                image: "https://mugstore.pl/Kubek-kwiaty.png",
-            },
-            {
-                id: "3",
-                name: "Bob",
-                tagline: "Johnson",
-                image: "https://mugstore.pl/Kubek-kwiaty.png",
-            },
-        ];
+    properties
 
     let filteredProperties = properties;
     if (search) {
