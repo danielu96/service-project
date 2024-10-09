@@ -24,11 +24,43 @@
         "image": "http://plytex.net.pl/images/xakcesoria1.png.pagespeed.ic.3-iwz266nn.webp"
     },
     {
-        "id": "3",
+        "id": "4",
         "name": "plyt",
         "tagline": "By injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. ",
         "header": "What's a different",
         "price": "50",
+        "image": "http://plytex.net.pl/images/405x170xdrzwiczki.png.pagespeed.ic.k5vC-DgaEP.webp"
+    },
+    {
+        "id": "5",
+        "name": "blat",
+        "tagline": "By injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. ",
+        "header": "What's a different",
+        "price": "50",
+        "image": "http://plytex.net.pl/images/405x170xdisplay_catalog_image.aspx.jpeg.pagespeed.ic.hRu6yPobaD.webp"
+    },
+    {
+        "id": "6",
+        "name": "akces",
+        "tagline": "By injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. ",
+        "header": "What's a different",
+        "price": "50",
+        "image": "http://plytex.net.pl/images/405x170xblaty.png.pagespeed.ic.UoN17t5JM9.webp"
+    },
+    {
+        "id": "7",
+        "name": "form",
+        "tagline": "By injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. ",
+        "header": "What's a different",
+        "price": "50",
         "image": "/images/bg1.jpg"
+    },
+    {
+        "id": "8",
+        "name": "news",
+        "tagline": "By injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. ",
+        "header": "What's a different",
+        "price": "50",
+        "image": "/images/bg2.jpg"
     }
 ]
