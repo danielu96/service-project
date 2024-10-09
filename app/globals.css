@@ -68,7 +68,9 @@
   @layer base {
     .fanart {
       background: url("bg2.jpg");
-      height: fit-content
+      height: max-content;
+      position: relative;
+      background-position: bottom;
     }
   }
 

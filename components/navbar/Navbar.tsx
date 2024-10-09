@@ -17,7 +17,7 @@ function Navbar() {
                 </div>
 
             </nav>
-            <h1 className='text-center capitalize font-serif font-extrabold text-white text-5xl'>It is the company</h1>
+            <h1 className='mx-auto p-3 capitalize font-serif font-extrabold text-black bg-slate-100 text-5xl max-w-fit '>It is the company</h1>
             <Navsearch />
 
         </>
