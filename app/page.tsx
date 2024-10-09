@@ -3,6 +3,7 @@ import ProductContainer from '@/components/home/ProductContainer';
 import LoadingCards from '@/components/card/LoadingCards';
 import { Suspense } from 'react';
 import Map from '@/components/map/map';
+import Footer from '@/components/footer/Footer';
 
 function HomePage({
   searchParams,
@@ -15,6 +16,7 @@ function HomePage({
         <ProductContainer search={searchParams.search} />
       </Suspense>
       <Map />
+      <Footer />
     </section>
   )
 }
