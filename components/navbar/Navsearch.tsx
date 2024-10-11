@@ -1,4 +1,4 @@
-'use client';
+"use client"
 import { Input } from '../ui/input';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
@@ -30,7 +30,7 @@ function NavSearch() {
         <Input
             type='search'
             placeholder='find a property...'
-            className='w-auto my-20 p-4 mx-auto border-b-2 bg-white'
+            className='w-auto p-5 mx-auto  border-b-2 rounded-lg bg-white'
             onChange={(e) => {
                 setSearch(e.target.value);
                 handleSearch(e.target.value);

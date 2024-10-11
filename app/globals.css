@@ -74,6 +74,15 @@
     }
   }
 
+  @layer base {
+    .anart {
+      background: url("bg1.jpg");
+      height: max-content;
+      position: relative;
+      background-position: bottom;
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
   }
