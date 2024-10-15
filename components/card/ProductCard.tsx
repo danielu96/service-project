@@ -20,7 +20,7 @@ const ProductCard = ({ product }: { product: ProductCardProps }) => {
                     />
                 </div>
                 <div className='flex justify-between items-center'>
-                    <h3 className='text-sm font-semibold mt-1'>
+                    <h3 className='capitalize text-sm font-semibold mt-1'>
                         {name}
                     </h3>
                 </div>
