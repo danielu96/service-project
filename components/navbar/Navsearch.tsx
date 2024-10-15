@@ -30,7 +30,7 @@ function NavSearch() {
         <Input
             type='search'
             placeholder='find a property...'
-            className='w-auto p-5 mx-auto  border-b-2 rounded-lg bg-white'
+            className='w-auto p-5 mx-auto  border-b-2 rounded-lg '
             onChange={(e) => {
                 setSearch(e.target.value);
                 handleSearch(e.target.value);
