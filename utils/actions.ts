@@ -24,6 +24,12 @@ export const fetchProperties = async ({
 
     return filteredProperties;
 };
+export const fetchPropertyDetails = (id: string) => {
+    const foundProduct = properties.find((property) => property.id === id);
+    console.log(foundProduct)
+    const property = foundProduct
+    return property;
+};
 
 
 
