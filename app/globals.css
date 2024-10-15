@@ -75,6 +75,14 @@
   }
 
   @layer base {
+    .bagart {
+      background: white;
+      width: fit-content;
+      padding: 10px;
+    }
+  }
+
+  @layer base {
     .anart {
       background: url("bg1.jpg");
       height: max-content;
