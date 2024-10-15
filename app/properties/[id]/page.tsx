@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import BreadCrumbs from '@/components/properties/BreadCrumbs';
 import ImageContainer from '@/components/properties/ImageContainer';
 import Footer from '@/components/footer/Footer';
+import { Separator } from '@/components/ui/separator';
 
 async function DetailsPage({ params }: { params: { id: string } }) {
     const property = await fetchPropertyDetails(params.id);
@@ -24,6 +25,7 @@ async function DetailsPage({ params }: { params: { id: string } }) {
                 </div>
             </div>
         </section>
+        <Separator />
         <Footer />
     </>
     )
