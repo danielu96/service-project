@@ -2,7 +2,8 @@
 
 import * as React from "react"
 import Link from "next/link"
-
+import news from '../../db/news.json'
+import onlyProducts from '../../db/onlyProducts.json'
 import { cn } from "@/lib/utils"
 
 import {
@@ -15,26 +16,26 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-const components: { title: string; href: string; description: string }[] = [
-    {
-        title: "Alert Dialog",
-        href: "/docs/primitives/alert-dialog",
-        description:
-            "A modal dialog that interrupts the user with important content and expects a response.",
-    },
-    {
-        title: "Hover Card",
-        href: "/docs/primitives/hover-card",
-        description:
-            "For sighted users to preview content available behind a link.",
-    },
-    {
-        title: "Progress",
-        href: "/docs/primitives/progress",
-        description:
-            "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-    },
-]
+// const components: { title: string; href: string; description: string }[] = [
+//     {
+//         title: "Alert ",
+//         href: "",
+//         description:
+//             "...",
+//     },
+//     {
+//         title: "Card",
+//         href: "/",
+//         description:
+//             "...",
+//     },
+//     {
+//         title: "Props",
+//         href: "",
+//         description:
+//             "",
+//     },
+// ]
 
 export function NavigationMenuDemo() {
     return (
@@ -43,31 +44,31 @@ export function NavigationMenuDemo() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Oferta</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 md:w-[200px] lg:w-[200px]">
-
-                            <ListItem href="/plyta" title="Płyta">
-                                Płyta laminowana to podstawowy produkt w produkcji mebli..
-                            </ListItem>
-                            <ListItem href="fronty" title="Fronty">
-                                How to install dependencies and structure your app.
-                            </ListItem>
-                            <ListItem href="blaty" title="Blaty">
-                                Styles for headings, paragraphs, lists...etc
-                            </ListItem>
+                        <ul className="grid w-[200px] gap-3 p-4 md:w-[200px] md:grid-cols-1 lg:w-[200px] ">
+                            {onlyProducts.map((component) => (
+                                <ListItem
+                                    key={component.name}
+                                    title={component.name}
+                                    href={component.href}
+                                >
+                                    {component.header}
+                                </ListItem>
+                            ))}
                         </ul>
+
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Atualności</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[200px] gap-3 p-4 md:w-[200px] md:grid-cols-1 lg:w-[200px] ">
-                            {components.map((component) => (
+                            {news.map((component) => (
                                 <ListItem
-                                    key={component.title}
-                                    title={component.title}
+                                    key={component.name}
+                                    title={component.name}
                                     href={component.href}
                                 >
-                                    {component.description}
+                                    {component.header}
                                 </ListItem>
                             ))}
                         </ul>
