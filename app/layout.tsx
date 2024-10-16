@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/navbar/Navbar';
 import Providers from "./providers";
+import CarouselComponent from "@/components/navbar/Carousel";
 
 
 
@@ -23,10 +24,13 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          <div className="mx-5">
-            <Navbar />
+          <div>
+            <div className="container sticky top-0 z-50">
+              <Navbar />
+            </div>
+            <CarouselComponent />
+            <main className='container py-10'>{children}</main>
           </div>
-          <main className='container py-10'>{children}</main>
         </Providers>
       </body>
     </html>
