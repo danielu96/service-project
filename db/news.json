@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "name": "Project Examples",
+        "tagline": "By injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. ",
+        "header": "Some projects",
+        "price": "50",
+        "href": "/properties/7",
+        "image": "/images/bg1.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Our news and ...",
+        "tagline": "By injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. ",
+        "header": "Last news",
+        "price": "50",
+        "href": "/properties/8",
+        "image": "/images/bg2.jpg"
+    }
+]
