@@ -15,7 +15,8 @@ function HomePage({
       <Suspense fallback={<LoadingCards />}>
         <ProductContainer search={searchParams.search} />
       </Suspense>
-      <Map />
+      <div className='container'><Map /></div>
+
       <Footer />
     </section>
   )
