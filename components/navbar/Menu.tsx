@@ -77,7 +77,7 @@ export function NavigationMenuDemo() {
                 <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            O Nas
+                            Home
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>

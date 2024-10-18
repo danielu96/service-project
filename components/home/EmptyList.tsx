@@ -10,7 +10,7 @@ function EmptyList({
     btnText?: string;
 }) {
     return (
-        <div className='mt-4'>
+        <div className='container my-12 text-center'>
             <h2 className='text-xl font-bold'>{heading}</h2>
             <p className='text-lg'>{message}</p>
             <Button asChild className='mt-4 capitalize' size='lg'>
