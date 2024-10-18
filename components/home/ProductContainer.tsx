@@ -3,6 +3,7 @@ import React from 'react'
 import ProductList from './ProductList';
 import { fetchProperties } from '@/utils/actions';
 import EmptyList from './EmptyList';
+import AboutUs from './AboutUs';
 
 async function ProductContainer(
     {
@@ -24,7 +25,10 @@ async function ProductContainer(
             <EmptyList />
         )
     return (
-        <ProductList products={products} />
+        <div className='container'>
+            <AboutUs />
+            <ProductList products={products} />
+        </div>
     )
 }
 
