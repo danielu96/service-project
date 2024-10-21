@@ -16,11 +16,11 @@ const ProductCard = ({ product }: { product: ProductCardProps }) => {
                         sizes='(max-width: 768px) 80vw, (max-width: 1200px) 80vw'
 
                         alt={name}
-                        className=' rounded-md group-hover:brightness-50 ease-out duration-1000 object-cover transform group-hover:scale-110 transition-transform '
+                        className=' rounded-md brightness-75 group-hover:brightness-50 ease-out duration-1000 object-cover transform group-hover:scale-110 transition-transform '
 
                     />
                 </div>
-                <div className='absolute text-gray-950 top-5 right-5 zoom-in-75 bg-stone-200 rounded-lg px-2 py-3'>Company</div>
+                <div className='absolute  top-5 right-5 zoom-in-75 bg-primary-foreground rounded-lg px-2 py-2'>{name}</div>
                 <div className='flex justify-between items-center'>
                     <h3 className='capitalize text-sm font-semibold md:text-xl mt-1'>
                         {name}
