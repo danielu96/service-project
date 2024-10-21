@@ -18,9 +18,9 @@ export const fetchProperties = async ({
             return nameMatch || taglineMatch;
         });
     }
-    // if (category) {
-    //   filteredProperties = filteredProperties.filter(property => property.category === category);
-    // }
+    if (category) {
+        filteredProperties = filteredProperties.filter(property => property.category === category);
+    }
 
     return filteredProperties;
 };

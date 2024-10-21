@@ -4,16 +4,23 @@ import LoadingCards from '@/components/card/LoadingCards';
 import { Suspense } from 'react';
 import Map from '@/components/map/map';
 import Footer from '@/components/footer/Footer';
+import CategoriesList from '@/components/home/CatgoriesList';
 
 function HomePage({
   searchParams,
 }: {
-  searchParams: { search?: string };
+  searchParams: { category?: string; search?: string };
 }) {
   return (
     <section >
+      <CategoriesList
+        category={searchParams.category}
+        search={searchParams.search}
+      />
       <Suspense fallback={<LoadingCards />}>
-        <ProductContainer search={searchParams.search} />
+        <ProductContainer
+          category={searchParams.category}
+          search={searchParams.search} />
       </Suspense>
       <div className='container'><Map /></div>
 
