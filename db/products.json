@@ -7,7 +7,7 @@
         "price": "20",
         "category": "board",
         "href": "/properties/1",
-        "image": "http://plytex.net.pl/images/405x170xzdj.png.pagespeed.ic.ArOxb9Ln5y.webp"
+        "image": "/images/bg1.jpg"
     },
     {
         "id": "2",
@@ -17,7 +17,7 @@
         "price": "30",
         "category": "board",
         "href": "/properties/2",
-        "image": "http://plytex.net.pl/images/xplyta_meblowa1.png.pagespeed.ic.j1caBWQTET.webp"
+        "image": "/images/bg09.png"
     },
     {
         "id": "3",
@@ -27,7 +27,7 @@
         "price": "50",
         "category": "service",
         "href": "/properties/3",
-        "image": "http://plytex.net.pl/images/xakcesoria1.png.pagespeed.ic.3-iwz266nn.webp"
+        "image": "/images/bg03.png"
     },
     {
         "id": "4",
@@ -37,7 +37,7 @@
         "price": "50",
         "category": "front",
         "href": "/properties/4",
-        "image": "http://plytex.net.pl/images/405x170xdrzwiczki.png.pagespeed.ic.k5vC-DgaEP.webp"
+        "image": "/images/bg04.png"
     },
     {
         "id": "5",
@@ -47,7 +47,7 @@
         "price": "50",
         "category": "service",
         "href": "/properties/5",
-        "image": "http://plytex.net.pl/images/405x170xdisplay_catalog_image.aspx.jpeg.pagespeed.ic.hRu6yPobaD.webp"
+        "image": "/images/bg05.png"
     },
     {
         "id": "6",
@@ -57,7 +57,7 @@
         "price": "50",
         "category": "front",
         "href": "/properties/6",
-        "image": "http://plytex.net.pl/images/405x170xblaty.png.pagespeed.ic.UoN17t5JM9.webp"
+        "image": "/images/bg06.png"
     },
     {
         "id": "7",
@@ -67,7 +67,7 @@
         "price": "50",
         "category": "news",
         "href": "/properties/7",
-        "image": "/images/bg1.jpg"
+        "image": "/images/bg07.png"
     },
     {
         "id": "8",
@@ -77,6 +77,6 @@
         "price": "50",
         "category": "news",
         "href": "/properties/8",
-        "image": "/images/bg2.jpg"
+        "image": "/images/bg08.png"
     }
 ]

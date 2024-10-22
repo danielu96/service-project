@@ -26,8 +26,9 @@ async function ProductContainer(
         )
     return (
         <div className='container'>
-            <AboutUs />
+
             <ProductList products={products} />
+            <AboutUs />
         </div>
     )
 }
