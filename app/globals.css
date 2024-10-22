@@ -64,49 +64,64 @@
   * {
     @apply border-border;
   }
+}
 
-  @layer base {
-    .fanart {
-      background: url("bg2.jpg");
-      height: max-content;
-      position: relative;
-      background-position: bottom;
-    }
+@layer base {
+  .bg01 {
+    background: url("../public/images/bg01.png");
+    height: max-content;
+    position: relative;
+    /* background-position: bottom; */
   }
 
-  @layer base {
-    .bagart {
-      background: white;
-      width: fit-content;
-      padding: 10px;
-    }
+  .bg02 {
+    background: url("../public/images/bg02.png");
+    height: max-content;
+    position: relative;
+    /* background-position: bottom; */
   }
 
-  @layer base {
-    .anart {
-      background: url("bg1.jpg");
-      height: max-content;
-      position: relative;
-      background-position: bottom;
-    }
-
-    .navcontainer {
-      @apply mx-auto max-w-6xl xl:max-w-full max-h-max px-8;
-    }
+  .bg03 {
+    background: url("../public/images/bg03.png");
+    height: max-content;
+    position: relative;
+    /* background-position: bottom; */
   }
 
-  body {
-    @apply bg-background text-foreground;
+  .bg04 {
+    background: url("../public/images/bg04.png");
+    height: max-content;
+    position: relative;
+    background-position: center;
   }
 
-  @layer components {
-    .container {
-      @apply mx-auto max-w-6xl xl:max-w-7xl max-h-max px-8;
-    }
+}
 
-    .bg-image {
-      @apply fanart;
-    }
+@layer base {
+  .bagart {
+    background: white;
+    width: fit-content;
+    padding: 10px;
+  }
+}
+
+
+
+.navcontainer {
+  @apply mx-auto max-w-6xl xl:max-w-full max-h-max px-8;
+}
+
+
+body {
+  @apply bg-background text-foreground;
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-6xl xl:max-w-7xl max-h-max px-8;
   }
 
+  .bg-image {
+    @apply fanart;
+  }
 }
