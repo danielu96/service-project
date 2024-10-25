@@ -1,6 +1,5 @@
 export default Logo
 import Link from 'next/link';
-import { LuTent } from 'react-icons/lu';
 import { Button } from '../ui/button';
 import { Gi3dHammer } from "react-icons/gi";
 function Logo() {
