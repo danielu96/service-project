@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // output: 'export',
     images: {
         remotePatterns: [
             {
@@ -10,14 +11,14 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'ohzyszlnufwlavkjhyfu.supabase.co',
             },
-            {
-                protocol: 'https',
-                hostname: 'mugstore.pl',
-            },
-            {
-                protocol: 'http',
-                hostname: 'plytex.net.pl'
-            },
+            // {
+            //     protocol: 'https',
+            //     hostname: 'mugstore.pl',
+            // },
+            // {
+            //     protocol: 'http',
+            //     hostname: 'plytex.net.pl'
+            // },
 
         ],
 
