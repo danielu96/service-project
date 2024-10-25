@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import { FaFacebookF } from 'react-icons/fa'
 import { IoIosMail } from "react-icons/io";
 import { BsTelephoneFill } from "react-icons/bs";

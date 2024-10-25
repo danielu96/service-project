@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const ProductCard = ({ product }: { product: ProductCardProps }) => {
-    const { name, image, header } = product;
+    const { name, image } = product;
     const { id: propertyId, tagline } = product;
     return (
         <article className='group relative md:mx-10 '>
