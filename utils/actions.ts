@@ -1,4 +1,4 @@
-
+'use server'
 import properties from '../db/products.json'
 
 export const fetchProperties = async ({
