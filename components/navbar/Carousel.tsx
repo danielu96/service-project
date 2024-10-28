@@ -17,7 +17,7 @@ function CarouselComponent() {
     )
     return (
         <>
-            <div className='navcontainer'>
+            <div>
                 <Carousel
                     plugins={[plugin.current]}
                     className=" max-w-full z-auto"
