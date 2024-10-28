@@ -105,23 +105,22 @@
   }
 }
 
-
-
-.navcontainer {
-  @apply mx-auto max-w-6xl xl:max-w-full max-h-max px-8;
-}
-
-
-body {
-  @apply bg-background text-foreground;
-}
-
 @layer components {
   .container {
-    @apply mx-auto max-w-6xl xl:max-w-7xl max-h-max px-8;
+    @apply mx-auto max-w-full xl:max-w-7xl max-h-max;
   }
 
   .bg-image {
     @apply fanart;
   }
+
+
+
+  .navcontainer {
+    @apply max-h-max px-8;
+  }
+}
+
+body {
+  @apply bg-background text-foreground;
 }

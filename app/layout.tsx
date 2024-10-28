@@ -22,8 +22,8 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          <div className="navcontainer">
-            <div className=" sticky top-0 z-50">
+          <div className="w-full px-2">
+            <div className="sticky top-0 z-50">
               <Navbar />
             </div>
             <CarouselComponent />
