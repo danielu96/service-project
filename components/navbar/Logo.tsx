@@ -4,10 +4,10 @@ import { Button } from '../ui/button';
 import { Gi3dHammer } from "react-icons/gi";
 function Logo() {
     return (
-        <Button size='icon' asChild>
-            <Link href='/'>
-                <Gi3dHammer className='w-20 h-6 px-0.8' />
-                <span>Pick</span>
+        <Button className='min-w-max p-3 gap-2 ' size='icon' asChild>
+            <Link className='flex' href='/'>
+                <Gi3dHammer className='size-5' />
+                <span>SAURON</span>
             </Link>
 
         </Button>
