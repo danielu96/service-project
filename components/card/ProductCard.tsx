@@ -1,11 +1,11 @@
 import React from 'react'
-import { ProductCardProps } from '@/utils/types'
+import { PropertyCardProps } from '@/utils/types'
 import Image from 'next/image';
 import Link from 'next/link';
 
-const ProductCard = ({ product }: { product: ProductCardProps }) => {
-    const { name, image } = product;
-    const { id: propertyId, tagline } = product;
+const ProductCard = ({ property }: { property: PropertyCardProps }) => {
+    const { name, image } = property;
+    const { id: propertyId, tagline } = property;
     return (
         <article className='group relative md:mx-10 '>
             <Link href={`/properties/${propertyId}`}>
