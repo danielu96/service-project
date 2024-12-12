@@ -28,7 +28,7 @@ export default function RootLayout({
                 <Navbar />
               </div>
               <CarouselComponent />
-              <main className=' py-10'>{children}</main>
+              <main className='container py-10'>{children}</main>
             </div>
           </Providers>
         </body>
