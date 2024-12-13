@@ -207,4 +207,107 @@ export const fetchPropertyDetails = (id: string) => {
         // },
     });
 };
+const getAdminUser = async () => {
+    const user = await getAuthUser();
+    if (user.id !== process.env.ADMIN_USER_ID) redirect('/');
+    return user;
+};
+export const updatePropertyAction = async (
+    prevState: any,
+    formData: FormData
+): Promise<{ message: string }> => {
+    const user = await getAuthUser();
+    const propertyId = formData.get('id') as string;
 
+    try {
+        const rawData = Object.fromEntries(formData);
+        const validatedFields = validateWithZodSchema(propertySchema, rawData);
+        await db.property.update({
+            where: {
+                id: propertyId,
+                profileId: user.id,
+            },
+            data: {
+                ...validatedFields,
+            },
+        });
+
+        revalidatePath(`/admin/${propertyId}/edit`);
+        return { message: 'Update Successful' };
+    } catch (error) {
+        return renderError(error);
+    }
+};
+export const fetchProposals = async () => {
+    const user = await getAuthUser();
+    const proposals = await db.property.findMany({
+        where: {
+            profileId: user.id,
+        },
+        select: {
+            id: true,
+            name: true,
+            // price: true,
+        },
+    });
+
+    return proposals;
+};
+
+
+
+export async function deleteProposalAction(prevState: { propertyId: string }) {
+    const { propertyId } = prevState;
+    const user = await getAuthUser();
+
+    try {
+        await db.property.delete({
+            where: {
+                id: propertyId,
+                profileId: user.id,
+            },
+        });
+
+        revalidatePath('/admin');
+        return { message: 'Proposal deleted successfully' };
+    } catch (error) {
+        return renderError(error);
+    }
+}
+export const fetchProposalDetails = async (propertyId: string) => {
+    const user = await getAuthUser();
+
+    return db.property.findUnique({
+        where: {
+            id: propertyId,
+            profileId: user.id,
+        },
+    });
+};
+export const updatePropertyImageAction = async (
+    prevState: any,
+    formData: FormData
+): Promise<{ message: string }> => {
+    const user = await getAuthUser();
+    const propertyId = formData.get('id') as string;
+
+    try {
+        const image = formData.get('image') as File;
+        const validatedFields = validateWithZodSchema(imageSchema, { image });
+        const fullPath = await uploadImage(validatedFields.image);
+
+        await db.property.update({
+            where: {
+                id: propertyId,
+                profileId: user.id,
+            },
+            data: {
+                image: fullPath,
+            },
+        });
+        revalidatePath(`/rentals/${propertyId}/edit`);
+        return { message: 'Property Image Updated Successful' };
+    } catch (error) {
+        return renderError(error);
+    }
+};
