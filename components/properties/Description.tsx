@@ -18,7 +18,7 @@ const Description = ({ description }: { description: string }) => {
 
     return (
         <article className='mt-4'>
-            <Title text='Description' />
+            <Title text='About it' />
             <p className='text-muted-foreground font-light leading-loose'>
                 {displayedDescription}
             </p>
