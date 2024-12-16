@@ -3,7 +3,7 @@ import { fetchPropertyDetails } from '@/utils/actions';
 import ImageContainer from '@/components/properties/ImageContainer';
 import { redirect } from 'next/navigation';
 import Description from '@/components/properties/Description';
-import { Calendar } from '@/components/ui/calendar';
+// import { Calendar } from '@/components/ui/calendar';
 
 async function DetailsPage({ params }: { params: { id: string } }) {
 
@@ -21,7 +21,7 @@ async function DetailsPage({ params }: { params: { id: string } }) {
           <Description description={property.description} />
           <p className=' text-pretty text-xs text-end mt-14'>- Welcome -</p>
         </div>
-        <Calendar />
+        {/* <Calendar /> */}
       </section>
     </section >
 
