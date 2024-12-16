@@ -1,113 +1,62 @@
-"use client"
-
-import * as React from "react"
-import Link from "next/link"
-import news from '../../db/news.json'
-import onlyProducts from '../../db/onlyProducts.json'
-import { cn } from "@/lib/utils"
-
 import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-    navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+    DropdownMenuSeparator,
+} from '@/components/ui/dropdown-menu';
+import { LuAlignLeft } from 'react-icons/lu';
+import Link from 'next/link';
+import { Button } from '../ui/button';
+import UserIcon from './UserIcon';
+import { links } from '@/utils/links';
+import SignOutLink from './SignOutLink';
+import { SignedOut, SignedIn, SignInButton, SignUpButton } from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs/server';
 
-// const components: { title: string; href: string; description: string }[] = [
-//     {
-//         title: "Alert ",
-//         href: "",
-//         description:
-//             "...",
-//     },
-//     {
-//         title: "Card",
-//         href: "/",
-//         description:
-//             "...",
-//     },
-//     {
-//         title: "Props",
-//         href: "",
-//         description:
-//             "",
-//     },
-// ]
-
-export function NavigationMenuDemo() {
+async function LinksDropdown() {
+    const isAdminUser = (await auth()).userId === process.env.ADMIN_USER_ID;
     return (
-        <NavigationMenu>
-            <NavigationMenuList>
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger>Oferta</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[200px] gap-3 p-4 md:w-[200px] md:grid-cols-1 lg:w-[200px] ">
-                            {onlyProducts.map((component) => (
-                                <ListItem
-                                    key={component.name}
-                                    title={component.name}
-                                    href={component.href}
-                                >
-                                    {component.header}
-                                </ListItem>
-                            ))}
-                        </ul>
-
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger>Atualności</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[200px] gap-3 p-4 md:w-[200px] md:grid-cols-1 lg:w-[200px] ">
-                            {news.map((component) => (
-                                <ListItem
-                                    key={component.name}
-                                    title={component.name}
-                                    href={component.href}
-                                >
-                                    {component.header}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Home
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-            </NavigationMenuList>
-        </NavigationMenu>
-    )
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button variant='outline' className='flex gap-4 max-w-[100px]'>
+                    <LuAlignLeft className='w-6 h-6' />
+                    <UserIcon />
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className='w-52' align='start' sideOffset={10}>
+                <SignedOut>
+                    <DropdownMenuItem>
+                        <SignInButton mode='modal'>
+                            <button className='w-full text-left'>Login</button>
+                        </SignInButton>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        <SignUpButton mode='modal'>
+                            <button className='w-full text-left'>Register</button>
+                        </SignUpButton>
+                    </DropdownMenuItem>
+                </SignedOut>
+                <SignedIn>
+                    {links.map((link) => {
+                        if (link.label === 'admin' && !isAdminUser) { return null }
+                        else if (link.label === 'create property' && !isAdminUser) { return null }
+                        return (
+                            <DropdownMenuItem key={link.href}>
+                                <Link href={link.href} className='capitalize w-full'>
+                                    {link.label}
+                                </Link>
+                            </DropdownMenuItem>
+                        );
+                    })}
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        <SignOutLink />
+                    </DropdownMenuItem>
+                </SignedIn>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
 }
-
-const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-    return (
-        <li>
-            <NavigationMenuLink asChild>
-                <a
-                    ref={ref}
-                    className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                        className
-                    )}
-                    {...props}
-                >
-                    <div className="text-sm font-medium leading-none">{title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {children}
-                    </p>
-                </a>
-            </NavigationMenuLink>
-        </li>
-    )
-})
-ListItem.displayName = "ListItem"
+export default LinksDropdown;

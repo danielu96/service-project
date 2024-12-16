@@ -1,4 +1,4 @@
-import type { ProductCardProps } from '@/utils/types';
+import type { PropertyCardProps } from '@/utils/types';
 import React from 'react'
 import ProductList from './ProductList';
 import { fetchProperties } from '@/utils/actions';
@@ -14,20 +14,20 @@ async function ProductContainer(
         search?: string;
     }
 ) {
-    const products: ProductCardProps[] = await fetchProperties(
+    const properties: PropertyCardProps[] = await fetchProperties(
         {
             category,
             search
         }
     );
-    if (products.length === 0)
+    if (properties.length === 0)
         return (
             <EmptyList />
         )
     return (
         <div className='container'>
 
-            <ProductList products={products} />
+            <ProductList properties={properties} />
             <AboutUs />
         </div>
     )
