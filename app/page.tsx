@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductContainer from '@/components/home/ProductContainer';
-// import LoadingCards from '@/components/card/LoadingCards';
+import LoadingCards from '@/components/card/LoadingCards';
 import { Suspense } from 'react';
 import Map from '@/components/map/map';
 import Footer from '@/components/footer/Footer';
@@ -18,7 +18,7 @@ function HomePage({
         search={searchParams.search}
       />
       <Suspense
-      // fallback={<LoadingCards />}
+        fallback={<LoadingCards />}
       >
         <ProductContainer
           category={searchParams.category}
