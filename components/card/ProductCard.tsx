@@ -2,6 +2,7 @@ import React from 'react'
 import { PropertyCardProps } from '@/utils/types'
 import Image from 'next/image';
 import Link from 'next/link';
+import FavoriteToggleButton from './FavoriteToggleButton';
 
 const ProductCard = ({ property }: { property: PropertyCardProps }) => {
     const { name, image } = property;
@@ -30,6 +31,9 @@ const ProductCard = ({ property }: { property: PropertyCardProps }) => {
                     {tagline.substring(0, 80)}
                 </p>
             </Link>
+            <div className='absolute top-5 left-5 z-1'>
+                <FavoriteToggleButton propertyId={propertyId} />
+            </div>
         </article>
     )
 }
