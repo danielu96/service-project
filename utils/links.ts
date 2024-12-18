@@ -7,6 +7,7 @@ export const links: NavLink[] = [
     { href: '/', label: 'home' },
     { href: '/favorites ', label: 'favorites' },
     { href: '/profile ', label: 'profile' },
+    { href: '/reviews ', label: 'reviews' },
     { href: '/admin', label: 'admin' },
     { href: '/admin/create', label: 'create property' },
 ];
