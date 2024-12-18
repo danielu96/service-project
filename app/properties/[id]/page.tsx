@@ -6,16 +6,10 @@ import Description from '@/components/properties/Description';
 import SubmitReview from '@/components/reviews/SubmitReview';
 import PropertyReviews from '@/components/reviews/PropertyReviews';
 // import { Calendar } from '@/components/ui/calendar';
-import { findExistingReview } from '@/utils/actions';
-import { auth } from '@clerk/nextjs/server';
 
 async function DetailsPage({ params }: { params: { id: string } }) {
-  const { userId } = await auth();
   const property = await fetchProposalDetails(params.id);
   if (!property) redirect('/');
-
-
-  const isNotOwner = property.profileId !== userId;
 
   return (
     <section>
