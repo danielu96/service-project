@@ -3,6 +3,7 @@ import { PropertyCardProps } from '@/utils/types'
 import Image from 'next/image';
 import Link from 'next/link';
 import FavoriteToggleButton from './FavoriteToggleButton';
+import PropertyRating from './PropertyRating';
 
 const ProductCard = ({ property }: { property: PropertyCardProps }) => {
     const { name, image } = property;
@@ -26,6 +27,7 @@ const ProductCard = ({ property }: { property: PropertyCardProps }) => {
                     <h3 className='capitalize text-sm font-semibold md:text-xl mt-1'>
                         {name}
                     </h3>
+                    <PropertyRating inPage={false} propertyId={propertyId} />
                 </div>
                 <p className='text-sm mt-1 text-muted-foreground '>
                     {tagline.substring(0, 80)}
@@ -34,6 +36,7 @@ const ProductCard = ({ property }: { property: PropertyCardProps }) => {
             <div className='absolute top-5 left-5 z-1'>
                 <FavoriteToggleButton propertyId={propertyId} />
             </div>
+
         </article>
     )
 }

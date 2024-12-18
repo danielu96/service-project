@@ -1,13 +1,14 @@
 import BreadCrumbs from '@/components/properties/BreadCrumbs';
-import { fetchPropertyDetails } from '@/utils/actions';
+import { fetchProposalDetails } from '@/utils/actions';
 import ImageContainer from '@/components/properties/ImageContainer';
 import { redirect } from 'next/navigation';
 import Description from '@/components/properties/Description';
+import SubmitReview from '@/components/reviews/SubmitReview';
+import PropertyReviews from '@/components/reviews/PropertyReviews';
 // import { Calendar } from '@/components/ui/calendar';
 
 async function DetailsPage({ params }: { params: { id: string } }) {
-
-  const property = await fetchPropertyDetails(params.id);
+  const property = await fetchProposalDetails(params.id);
   if (!property) redirect('/');
 
   return (
@@ -21,6 +22,8 @@ async function DetailsPage({ params }: { params: { id: string } }) {
           <Description description={property.description} />
           <p className=' text-pretty text-xs text-end mt-14'>- Welcome -</p>
         </div>
+        <SubmitReview propertyId={property.id} />
+        <PropertyReviews propertyId={property.id} />
         {/* <Calendar /> */}
       </section>
     </section >
