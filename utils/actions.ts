@@ -191,22 +191,7 @@ export const fetchProperties = async ({
     });
     return properties;
 };
-export const fetchPropertyDetails = (id: string) => {
-    return db.property.findUnique({
-        where: {
-            id,
-        },
-        // include: {
-        //     profile: true,
-        //     bookings: {
-        //         select: {
-        //             checkIn: true,
-        //             checkOut: true,
-        //         },
-        //     },
-        // },
-    });
-};
+
 const getAdminUser = async () => {
     const user = await getAuthUser();
     if (user.id !== process.env.ADMIN_USER_ID) redirect('/');

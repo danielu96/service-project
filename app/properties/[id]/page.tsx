@@ -1,7 +1,6 @@
 import BreadCrumbs from '@/components/properties/BreadCrumbs';
-import { fetchPropertyDetails } from '@/utils/actions';
+import { fetchProposalDetails } from '@/utils/actions';
 import ImageContainer from '@/components/properties/ImageContainer';
-import UserInfo from '@/components/properties/UserInfo';
 import { redirect } from 'next/navigation';
 import Description from '@/components/properties/Description';
 import SubmitReview from '@/components/reviews/SubmitReview';
@@ -11,15 +10,12 @@ import { findExistingReview } from '@/utils/actions';
 import { auth } from '@clerk/nextjs/server';
 
 async function DetailsPage({ params }: { params: { id: string } }) {
-  const property = await fetchPropertyDetails(params.id);
+  const { userId } = await auth();
+  const property = await fetchProposalDetails(params.id);
   if (!property) redirect('/');
 
-  const { userId } = await auth();
+
   const isNotOwner = property.profileId !== userId;
-  const reviewDoesNotExist =
-    userId && isNotOwner && !(await findExistingReview(userId, property.id));
-
-
 
   return (
     <section>
