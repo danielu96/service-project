@@ -259,16 +259,32 @@ export async function deleteProposalAction(prevState: { propertyId: string }) {
         return renderError(error);
     }
 }
-export const fetchProposalDetails = async (propertyId: string) => {
-    const user = await getAuthUser();
+// export const fetchProposalDetails = async (propertyId: string) => {
+//     const user = await getAuthUser();
 
+//     return db.property.findUnique({
+//         where: {
+//             id: propertyId,
+//             profileId: user.id,
+//         },
+
+//     });
+// };
+export const fetchProposalDetails = (propertyId: string) => {
     return db.property.findUnique({
         where: {
             id: propertyId,
-            profileId: user.id,
+        },
+        include: {
+            profile: true,
         },
     });
 };
+
+
+
+
+
 export const updatePropertyImageAction = async (
     prevState: any,
     formData: FormData
