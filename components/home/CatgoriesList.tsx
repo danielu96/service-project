@@ -26,8 +26,8 @@ function CategoriesList({
                             >
                                 <article
                                     className={` py-1 flex flex-col items-center cursor-pointer duration-300 hover:text-slate-500  ${isActive ? ' font-bold underline' : ''}`}>
-                                    {/* <item.icon className='w-8 h-8' /> */}
-                                    <p className='px-1 capitalize mt-1  rounded-e-xl border-solid border-spacing-1 border-indigo-600'>{item.label}</p>
+                                    <item.icon className='w-8 h-8' />
+                                    <p className='text-sm px-1 capitalize mt-1  rounded-e-xl border-solid border-spacing-1 border-indigo-600'>{item.label}</p>
                                 </article>
                             </Link>
                         );
