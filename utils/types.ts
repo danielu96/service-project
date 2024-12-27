@@ -20,3 +20,7 @@ export type DateRangeSelect = {
     endDate: Date;
     key: string;
 };
+export type Booking = {
+    checkIn: Date;
+    checkOut: Date;
+};
