@@ -1,26 +1,29 @@
+import { IconType } from 'react-icons';
+import { BsHeartPulseFill, BsBank2, BsThermometerSun } from "react-icons/bs";
+
 
 type Category = {
     label: CategoryLabel;
-
+    icon: IconType;
 };
 
 export type CategoryLabel =
-    | 'board'
-    | 'front'
-    | 'service'
-    | 'news';
+    | 'activ'
+    | 'luxury'
+    | 'exotic';
+
 
 export const categories: Category[] = [
     {
-        label: 'board',
+        label: 'activ',
+        icon: BsHeartPulseFill,
     },
     {
-        label: 'front',
+        label: 'luxury',
+        icon: BsBank2,
     },
     {
-        label: 'service',
-    },
-    {
-        label: 'news',
+        label: 'exotic',
+        icon: BsThermometerSun,
     },
 ];
