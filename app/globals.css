@@ -75,7 +75,7 @@
   }
 
   .bg02 {
-    background: url("../public/images/bg02.png");
+    background: url("../public/images/ver1.png");
     height: max-content;
     position: relative;
     /* background-position: bottom; */
@@ -89,7 +89,7 @@
   }
 
   .bg04 {
-    background: url("../public/images/bg04.png");
+    background: url("../public/images/ver3.png");
     height: max-content;
     position: relative;
     background-position: center;
