@@ -2,6 +2,9 @@ export type ProductCardProps = {
     id: string;
     name: string;
     tagline: string;
+    image: string;
+    country: string;
+    price: number;
 
 };
 export type actionFunction = (
