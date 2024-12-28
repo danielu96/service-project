@@ -53,9 +53,10 @@ export const propertySchema = z.object({
         .max(100, {
             message: 'tagline must be less than 100 characters.',
         }),
-    // price: z.coerce.number().int().min(0, {
-    //     message: 'price must be a positive number.',
-    // }),
+    price: z.coerce.number().int().min(0, {
+        message: 'price must be a positive number.',
+    }),
+    country: z.string(),
     category: z.string(),
     description: z.string().refine(
         (description) => {
@@ -66,7 +67,19 @@ export const propertySchema = z.object({
             message: 'description must be between 10 and 1000 words.',
         },
     ),
-
+    guests: z.coerce.number().int().min(0, {
+        message: 'guest amount must be a positive number.',
+    }),
+    bedrooms: z.coerce.number().int().min(0, {
+        message: 'bedrooms amount must be a positive number.',
+    }),
+    beds: z.coerce.number().int().min(0, {
+        message: 'beds amount must be a positive number.',
+    }),
+    baths: z.coerce.number().int().min(0, {
+        message: 'bahts amount must be a positive number.',
+    }),
+    amenities: z.string(),
 });
 export const createReviewSchema = z.object({
     propertyId: z.string(),
