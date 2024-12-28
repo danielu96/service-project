@@ -8,6 +8,7 @@ import { updatePropertyAction } from '@/utils/actions';
 import { SubmitButton } from '@/components/form/Buttons';
 import CategoriesInput from '@/components/form/CategoriesInput';
 import TextAreaInput from '@/components/form/TextAreaInput';
+import PriceInput from '@/components/form/PriceInput';
 
 async function EditProposalPage({ params }: { params: { id: string } }) {
     const property = await fetchProposalDetails(params.id);
@@ -41,6 +42,7 @@ async function EditProposalPage({ params }: { params: { id: string } }) {
                             label='Tagline (30 limit)'
                             defaultValue={property.tagline}
                         />
+                        <PriceInput />
                         <CategoriesInput defaultValue={property.category} />
                     </div>
                     <TextAreaInput
