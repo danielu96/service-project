@@ -29,14 +29,21 @@ model Property {
   name        String
   tagline     String
   category    String
-  image       String  
-  description String  
+  image       String
+  country     String
+  description String
+  price       Int
+  guests      Int
+  bedrooms    Int
+  beds        Int
+  baths       Int
+  amenities   String
   createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt 
+  updatedAt   DateTime   @updatedAt
   profile     Profile    @relation(fields: [profileId], references: [clerkId], onDelete: Cascade)
   profileId   String
   favorites Favorite[]
- reviews Review[]
+  reviews Review[]
   bookings Booking[]
 }
 model Favorite {
