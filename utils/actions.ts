@@ -12,8 +12,7 @@ import {
 } from './schemas';
 import { uploadImage } from './supabase';
 import { calculateTotals } from './calculateTotals';
-// import { calculateTotals } from './calculateTotals';
-// import { formatDate } from './format';
+
 
 export const createProfileAction = async (
     prevState: any,
@@ -383,6 +382,8 @@ export const fetchFavorites = async () => {
                     name: true,
                     tagline: true,
                     image: true,
+                    country: true,
+                    price: true,
                 },
             },
         },
