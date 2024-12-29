@@ -27,7 +27,7 @@ const page = () => {
                     name='tagline'
                     type='text '
                     label='Tagline'
-                    defaultValue='i have somethong'
+                    defaultValue='about it'
                 />
                 <PriceInput />
                 <CategoriesInput />
