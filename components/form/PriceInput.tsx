@@ -3,7 +3,7 @@ import { Input } from '../ui/input';
 import { Prisma } from '@prisma/client';
 
 const name = Prisma.PropertyScalarFieldEnum.price;
-// const name = 'price';
+
 type FormInputNumberProps = {
     defaultValue?: number;
 };
@@ -11,8 +11,8 @@ type FormInputNumberProps = {
 function PriceInput({ defaultValue }: FormInputNumberProps) {
     return (
         <div className='mb-2'>
-            <Label htmlFor='price' className='capitalize'>
-                Price ($)
+            <Label htmlFor='price' >
+                Price (zł)
             </Label>
             <Input
                 id={name}
