@@ -13,13 +13,30 @@ import {
 } from '@/utils/calendar';
 
 function BookingCalendar() {
+    const { toast } = useToast();
     const currentDate = new Date();
-
+    const bookings = useProperty((state) => state.bookings);
+    const blockedPeriods = generateBlockedPeriods({
+        bookings,
+        today: currentDate,
+    });
+    const unavailableDates = generateDisabledDates(blockedPeriods);
     const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
-
     useEffect(() => {
+        const selectedRange = generateDateRange(range);
+        const isDisabledDateIncluded = selectedRange.some((date) => {
+            if (unavailableDates[date]) {
+                setRange(defaultSelected);
+                toast({
+                    description: 'Some dates are booked. Please select again.',
+                });
+                return true;
+            }
+            return false;
+        });
         useProperty.setState({ range });
     }, [range]);
+
 
     return (
         <Calendar
@@ -28,6 +45,7 @@ function BookingCalendar() {
             selected={range}
             onSelect={setRange}
             className='mb-4'
+            disabled={blockedPeriods}
         />
     );
 }
