@@ -22,6 +22,20 @@ function BookingCalendar() {
     });
     const unavailableDates = generateDisabledDates(blockedPeriods);
     const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
+    // useEffect(() => {
+    //     const selectedRange = generateDateRange(range);
+    //     const isDisabledDateIncluded = selectedRange.some((date) => {
+    //         if (unavailableDates[date]) {
+    //             setRange(defaultSelected);
+    //             toast({
+    //                 description: 'Some dates are booked. Please select again.',
+    //             });
+    //             return true;
+    //         }
+    //         return false;
+    //     });
+    //     useProperty.setState({ range });
+    // }, [range]);
     useEffect(() => {
         const selectedRange = generateDateRange(range);
         const isDisabledDateIncluded = selectedRange.some((date) => {
@@ -34,8 +48,14 @@ function BookingCalendar() {
             }
             return false;
         });
+
+        if (isDisabledDateIncluded) {
+            console.log('Selected range includes disabled dates.');
+        }
+
         useProperty.setState({ range });
     }, [range]);
+
 
 
     return (
@@ -46,7 +66,9 @@ function BookingCalendar() {
             onSelect={setRange}
             className='mb-4'
             disabled={blockedPeriods}
+
         />
+
     );
 }
 export default BookingCalendar;
