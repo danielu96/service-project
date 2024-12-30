@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchProposals, deleteProposalAction } from '@/utils/actions'
+import { fetchProposals, deleteProposalAction, fetchStats } from '@/utils/actions'
 import FormContainer from '@/components/form/FormContainer';
 import { IconButton } from '@/components/form/Buttons';
 import EmptyList from '@/components/home/EmptyList';
@@ -13,14 +13,14 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
-import { StatsLoadingContainer } from '@/components/admin/Loading';
-import StatsContainer from '@/components/admin/StatsContainer';
 
-import { Suspense } from 'react';
+// import StatsContainer from '@/components/admin/StatsContainer';
+// import { StatsLoadingContainer } from '@/components/admin/Loading';
+// import { Suspense } from 'react';
 
 async function AdminPage() {
-
-    const proposals = await fetchProposals()
+    const data = await fetchStats();
+    const proposals = await fetchProposals();
     if (proposals.length === 0) {
         return (
             <EmptyList
@@ -33,13 +33,16 @@ async function AdminPage() {
 
     return (
         <>
-            <Suspense fallback={<StatsLoadingContainer />}>
+            {/* <Suspense fallback={<StatsLoadingContainer />}>
                 <StatsContainer />
-            </Suspense>
+            </Suspense> */}
             <div >
 
-                <div className='mt-5 ml-2 flex justify-between '>
-                    <h5>Proposals: {proposals.length}</h5>
+                <div className='mt-5 grid md:grid-cols-3 gap-4 lg:grid-cols-4 '>
+                    <h5 className='mt-5 text-lg font-bold bg-primary-foreground rounded-lg px-3 py-2 border-y-2 border-card-foreground'>Users: {data.usersCount}</h5>
+                    <h5 className='mt-5 text-lg font-bold bg-primary-foreground rounded-lg px-3 py-2 border-y-2 border-card-foreground'>Products: {data.propertiesCount}</h5>
+                    <h5 className='mt-5 text-lg font-bold bg-primary-foreground rounded-lg px-3 py-2 border-y-2 border-card-foreground'>Bookings: {data.bookingsCount}</h5>
+                    <h5 className='mt-5 text-lg font-bold bg-primary-foreground rounded-lg px-3 py-2 border-y-2 border-card-foreground'>Proposals: {proposals.length}</h5>
                 </div>
                 <Table>
                     <TableCaption>All Yours Proposals</TableCaption>
