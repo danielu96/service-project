@@ -13,9 +13,9 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
-
-import StatsContainer from '@/components/admin/StatsContainer';
 import { StatsLoadingContainer } from '@/components/admin/Loading';
+import StatsContainer from '@/components/admin/StatsContainer';
+
 import { Suspense } from 'react';
 
 async function AdminPage() {
