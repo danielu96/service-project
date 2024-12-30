@@ -14,6 +14,7 @@ import { uploadImage } from './supabase';
 import { calculateTotals } from './calculateTotals';
 
 
+
 export const createProfileAction = async (
     prevState: any,
     formData: FormData
@@ -581,3 +582,18 @@ export async function deleteBookingAction(prevState: { bookingId: string }) {
         return renderError(error);
     }
 }
+
+
+export const fetchStats = async () => {
+    await getAdminUser();
+    const usersCount = await db.profile.count();
+    const bookingsCount = await db.booking.count();
+    const propertiesCount = await db.property.count();
+    return {
+        bookingsCount,
+        usersCount,
+        propertiesCount,
+    };
+
+};
+
