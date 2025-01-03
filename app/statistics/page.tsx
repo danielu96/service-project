@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import ChartsContainer from '@/components/statistics/ChartsContainer';
 import { ChartsLoadingContainer } from '@/components/statistics/Loading';
 
-const Statspage = () => {
+const StatsPage = () => {
     return (
         <>
             <Suspense fallback={<StatsLoadingContainer />}>
@@ -18,4 +18,4 @@ const Statspage = () => {
     )
 }
 
-export default Statspage
+export default StatsPage
