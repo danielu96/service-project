@@ -1,6 +1,6 @@
 import React from 'react'
 import StatsContainer from '@/components/admin/StatsContainer';
-import { StatsLoadingContainer } from '@/components/admin/Loading';
+import { StatsLoadingContainer } from '@/components/statistics/Loading';
 import { Suspense } from 'react';
 import ChartsContainer from '@/components/statistics/ChartsContainer';
 import { ChartsLoadingContainer } from '@/components/statistics/Loading';
