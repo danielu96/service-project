@@ -14,9 +14,7 @@ import {
     TableRow,
 } from '@/components/ui/table';
 
-// import StatsContainer from '@/components/admin/StatsContainer';
-// import { StatsLoadingContainer } from '@/components/admin/Loading';
-// import { Suspense } from 'react';
+
 
 async function AdminPage() {
     const data = await fetchStats();
@@ -33,9 +31,7 @@ async function AdminPage() {
 
     return (
         <>
-            {/* <Suspense fallback={<StatsLoadingContainer />}>
-                <StatsContainer />
-            </Suspense> */}
+
             <div >
 
                 <div className='mt-5 grid md:grid-cols-3 gap-4 lg:grid-cols-4 '>
