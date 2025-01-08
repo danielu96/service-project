@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ProductContainer from '@/components/home/ProductContainer';
 import LoadingCards from '@/components/card/LoadingCards';
-// import { Suspense } from 'react';
 import Map from '@/components/map/map';
 import Footer from '@/components/footer/Footer';
 import CategoriesList from '@/components/home/CatgoriesList';
@@ -32,7 +31,7 @@ import CategoriesList from '@/components/home/CatgoriesList';
 // }
 
 // export default HomePage;
-import withSuspense from '@/components/withSuspense';
+
 // import CategoriesList from './components/CategoriesList';
 // import ProductContainer from './components/ProductContainer';
 // import Map from './components/Map';
@@ -70,24 +69,24 @@ interface PageProps {
 }
 
 const HomePage: React.FC<PageProps> = ({ searchParams }) => {
-  const SuspenseCategoriesList = withSuspense(CategoriesList);
-  const SuspenseProductContainer = withSuspense(ProductContainer, <LoadingCards />);
-
   return (
     <section>
-      <SuspenseCategoriesList
+      <CategoriesList
         category={searchParams.category}
         search={searchParams.search}
       />
-      <SuspenseProductContainer
-        category={searchParams.category}
-        search={searchParams.search}
-      />
+      <Suspense fallback={<LoadingCards />}>
+        <ProductContainer
+          category={searchParams.category}
+          search={searchParams.search}
+        />
+      </Suspense>
       <div className='container'><Map /></div>
       <Footer />
     </section>
   );
 };
+
 HomePage.displayName = "HomePage";
 
 export default HomePage;
