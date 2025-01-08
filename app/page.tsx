@@ -39,7 +39,37 @@ import withSuspense from '@/components/withSuspense';
 // import Footer from './components/Footer';
 // import LoadingCards from './components/LoadingCards';
 
-const Page = ({ searchParams }: { searchParams: any }) => {
+// const Page = ({ searchParams }: { searchParams: any }) => {
+//   const SuspenseCategoriesList = withSuspense(CategoriesList);
+//   const SuspenseProductContainer = withSuspense(ProductContainer, <LoadingCards />);
+
+//   return (
+//     <section>
+//       <SuspenseCategoriesList
+//         category={searchParams.category}
+//         search={searchParams.search}
+//       />
+//       <SuspenseProductContainer
+//         category={searchParams.category}
+//         search={searchParams.search}
+//       />
+//       <div className='container'><Map /></div>
+//       <Footer />
+//     </section>
+//   );
+// };
+
+// export default Page;
+interface SearchParams {
+  category?: string;
+  search?: string;
+}
+
+interface PageProps {
+  searchParams: SearchParams;
+}
+
+const Page: React.FC<PageProps> = ({ searchParams }) => {
   const SuspenseCategoriesList = withSuspense(CategoriesList);
   const SuspenseProductContainer = withSuspense(ProductContainer, <LoadingCards />);
 

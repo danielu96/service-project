@@ -1,7 +1,7 @@
-import { Suspense } from 'react';
+import { Suspense, ComponentType, ReactNode } from 'react';
 
-const withSuspense = (Component: React.ComponentType, fallback: React.ReactNode = <div>Loading...</div>) => {
-    return (props: any) => (
+const withSuspense = <P extends object>(Component: ComponentType<P>, fallback: ReactNode = <div>Loading...</div>) => {
+    return (props: P) => (
         <Suspense fallback={fallback}>
             <Component {...props} />
         </Suspense>
