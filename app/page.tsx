@@ -69,7 +69,7 @@ interface PageProps {
   searchParams: SearchParams;
 }
 
-const Page: React.FC<PageProps> = ({ searchParams }) => {
+const HomePage: React.FC<PageProps> = ({ searchParams }) => {
   const SuspenseCategoriesList = withSuspense(CategoriesList);
   const SuspenseProductContainer = withSuspense(ProductContainer, <LoadingCards />);
 
@@ -88,5 +88,6 @@ const Page: React.FC<PageProps> = ({ searchParams }) => {
     </section>
   );
 };
+HomePage.displayName = "HomePage";
 
-export default Page;
+export default HomePage;
