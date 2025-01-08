@@ -5,6 +5,8 @@ import Navbar from '@/components/navbar/Navbar';
 import Providers from "./providers";
 import CarouselComponent from "@/components/navbar/Carousel";
 import { ClerkProvider } from '@clerk/nextjs';
+import { Suspense } from "react";
+import LoadingCards from "@/components/card/LoadingCards";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +30,9 @@ export default function RootLayout({
                 <Navbar />
               </div>
               <CarouselComponent />
-              <main className='container py-10'>{children}</main>
+              <Suspense fallback={<LoadingCards />}>
+                <main className='container py-10'>{children}</main>
+              </Suspense>
             </div>
           </Providers>
         </body>

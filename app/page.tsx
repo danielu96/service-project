@@ -5,88 +5,62 @@ import Map from '@/components/map/map';
 import Footer from '@/components/footer/Footer';
 import CategoriesList from '@/components/home/CatgoriesList';
 
-// function HomePage({
-//   searchParams,
-// }: {
-//   searchParams: { category?: string; search?: string };
-// }) {
+function HomePage({
+  searchParams,
+}: {
+  searchParams: { category?: string; search?: string };
+}) {
+  return (
+    <section >
+      <CategoriesList
+        category={searchParams.category}
+        search={searchParams.search}
+      />
+      <Suspense
+        fallback={<LoadingCards />}
+      >
+        <ProductContainer
+          category={searchParams.category}
+          search={searchParams.search} />
+      </Suspense>
+      <div className='container'><Map /></div>
+
+      <Footer />
+    </section>
+  )
+}
+
+export default HomePage;
+
+
+// interface SearchParams {
+//   category?: string;
+//   search?: string;
+// }
+
+// interface PageProps {
+//   searchParams: SearchParams;
+// }
+
+// const HomePage: React.FC<PageProps> = ({ searchParams }) => {
 //   return (
-//     <section >
+//     <section>
 //       <CategoriesList
 //         category={searchParams.category}
 //         search={searchParams.search}
 //       />
-//       <Suspense
-//         fallback={<LoadingCards />}
-//       >
+//       <Suspense fallback={<LoadingCards />}>
 //         <ProductContainer
 //           category={searchParams.category}
-//           search={searchParams.search} />
+//           search={searchParams.search}
+//         />
 //       </Suspense>
-//       <div className='container'><Map /></div>
-
-//       <Footer />
-//     </section>
-//   )
-// }
-
-// export default HomePage;
-
-// import CategoriesList from './components/CategoriesList';
-// import ProductContainer from './components/ProductContainer';
-// import Map from './components/Map';
-// import Footer from './components/Footer';
-// import LoadingCards from './components/LoadingCards';
-
-// const Page = ({ searchParams }: { searchParams: any }) => {
-//   const SuspenseCategoriesList = withSuspense(CategoriesList);
-//   const SuspenseProductContainer = withSuspense(ProductContainer, <LoadingCards />);
-
-//   return (
-//     <section>
-//       <SuspenseCategoriesList
-//         category={searchParams.category}
-//         search={searchParams.search}
-//       />
-//       <SuspenseProductContainer
-//         category={searchParams.category}
-//         search={searchParams.search}
-//       />
 //       <div className='container'><Map /></div>
 //       <Footer />
 //     </section>
 //   );
 // };
 
-// export default Page;
-interface SearchParams {
-  category?: string;
-  search?: string;
-}
+// HomePage.displayName = "HomePage";
 
-interface PageProps {
-  searchParams: SearchParams;
-}
-
-const HomePage: React.FC<PageProps> = ({ searchParams }) => {
-  return (
-    <section>
-      <CategoriesList
-        category={searchParams.category}
-        search={searchParams.search}
-      />
-      <Suspense fallback={<LoadingCards />}>
-        <ProductContainer
-          category={searchParams.category}
-          search={searchParams.search}
-        />
-      </Suspense>
-      <div className='container'><Map /></div>
-      <Footer />
-    </section>
-  );
-};
-
-HomePage.displayName = "HomePage";
-
-export default HomePage;
+// export default HomePage;
