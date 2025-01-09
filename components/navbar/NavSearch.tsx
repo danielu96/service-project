@@ -39,4 +39,13 @@ function NavSearch() {
         </Suspense>
     );
 }
-export default NavSearch;
+
+export default function NavSearchWrapper() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <NavSearch />
+        </Suspense>
+    );
+}
+
+// export default NavSearch;
