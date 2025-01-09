@@ -12,8 +12,9 @@ import CounterInput from '@/components/form/CounterInput'
 import AmenitiesInput from '@/components/form/AmenitiesInput'
 
 
-const page = () => {
+function CreateProposalsPage() {
     return (
+
         <section>
             <h1 className='text-3xl'>Create</h1>
             <FormContainer action={createPropertyAction}>
@@ -44,7 +45,8 @@ const page = () => {
                 <SubmitButton className='mt-2' text='create property' />
             </FormContainer>
         </section>
+
     )
 }
 
-export default page
+export default CreateProposalsPage
