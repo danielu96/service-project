@@ -7,6 +7,7 @@ import CarouselComponent from "@/components/navbar/Carousel";
 import { ClerkProvider } from '@clerk/nextjs';
 import { Suspense } from "react";
 import LoadingCards from "@/components/card/LoadingCards";
+import ErrorBoundary from "./ErrorBoundary";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,9 +31,11 @@ export default function RootLayout({
                 <Navbar />
               </div>
               <CarouselComponent />
-              <Suspense fallback={<LoadingCards />}>
-                <main className='container py-10'>{children}</main>
-              </Suspense>
+              <ErrorBoundary>
+                <Suspense fallback={<LoadingCards />}>
+                  <main className='container py-10'>{children}</main>
+                </Suspense>
+              </ErrorBoundary>
             </div>
           </Providers>
         </body>
