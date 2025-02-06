@@ -11,7 +11,7 @@ const ProductCard = ({ property }: { property: ProductCardProps }) => {
     const { name, image, price } = property;
     const { country, id: propertyId, tagline } = property;
     return (
-        <article className='group relative md:mx-10 '>
+        <article className='p-2 group relative md:mx-10 scale-x-105'>
             <Link href={`/properties/${propertyId}`}>
                 <div className='relative h-[300px] md:h-[200px] mb-2 overflow-hidden rounded-md'>
                     <Image

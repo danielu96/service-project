@@ -25,7 +25,7 @@ function CarouselComponent() {
                     onMouseLeave={plugin.current.reset}
                 >
                     <CarouselContent>
-                        <CarouselItem className='bg01 h-96'>
+                        <CarouselItem className='bg01 scale-y-105'>
                             <div className='grid grid-row-3 p-8 mx-10 mt-32 sm:mt-24 sm:ml-36 '>
                                 <h1 className='  p-3 capitalize font-serif font-extrabold text-black bg-white text-xl md:text-5xl max-w-fit '>where is this place</h1>
                                 <h3 className='invisible sm:visible p-3 capitalize font-serif font-extrabold text-black bg-white text-xl md:text-2xl max-w-fit border-t-2 border-solid '>check it</h3>
@@ -36,7 +36,7 @@ function CarouselComponent() {
                                 </div>
                             </div>
                         </CarouselItem>
-                        <CarouselItem className='bg02 h-96'>
+                        <CarouselItem className='bg02 scale-y-105'>
                             <div className='grid grid-row-3 p-8 mx-10 mt-32 sm:mt-24 sm:ml-36'>
                                 <h1 className=' p-3 capitalize font-serif font-extrabold text-black bg-white text-xl md:text-5xl max-w-fit '>do you want to be there?</h1>
                                 <h3 className='invisible sm:visible p-3 capitalize font-serif font-extrabold text-black bg-white text-xl md:text-2xl max-w-fit border-t-2 border-solid '>what do you want to see</h3>
@@ -47,7 +47,7 @@ function CarouselComponent() {
                                 </div>
                             </div>
                         </CarouselItem>
-                        <CarouselItem className='bg03 h-96'>
+                        <CarouselItem className='bg03 scale-y-105'>
                             <div className='grid grid-row-3 p-8 mx-10 mt-32 sm:mt-24 sm:ml-36'>
                                 <h1 className=' p-3 capitalize font-serif font-extrabold text-black bg-white text-xl md:text-5xl max-w-fit '>do you like this place?</h1>
                                 <h3 className='invisible sm:visible p-3 capitalize font-serif font-extrabold text-black bg-white text-xl md:text-2xl max-w-fit border-t-2 border-solid '>of course</h3>
@@ -58,7 +58,7 @@ function CarouselComponent() {
                                 </div>
                             </div>
                         </CarouselItem>
-                        <CarouselItem className='bg04 h-96'>
+                        <CarouselItem className='bg04 scale-y-105'>
                             <div className='grid grid-row-3 p-8 mx-10 mt-32 sm:mt-24 sm:ml-36'>
                                 <h1 className=' p-3 capitalize font-serif font-extrabold text-black bg-white text-xl md:text-5xl max-w-fit '>what a view</h1>
                                 <h3 className='invisible sm:visible p-3 capitalize font-serif font-extrabold text-black bg-white text-xl md:text-2xl max-w-fit border-t-2 border-solid '>are you interested?</h3>
