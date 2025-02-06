@@ -8,8 +8,8 @@ const Footer = () => {
         <section>
             <div className="grid grid-cols-1 mx-auto mt-5 w-fit ">
 
-                <div className='grid grid-cols-3'>
-                    <div className='flex justify-center mb-3'><BsTelephoneFill className='size-5 mr-2' />  <p> 222 333 444 </p></div>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-2'>
+                    <div className='flex justify-center'><BsTelephoneFill className='size-5 mr-2' />  <p> 222 333 444 </p></div>
                     <div className='flex justify-center'><IoIosMail className='size-6 mr-2' />  <p> info@info.com </p></div>
                     <div className='flex justify-center'><FaFacebookF className='size-5 mr-2' />  <p> odwiedź nas </p></div>
                 </div>
