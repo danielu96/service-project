@@ -25,18 +25,18 @@ function NavSearch() {
         }
     }, [searchParams.get('search')]);
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            <Input
-                type='search'
-                placeholder='find a property...'
-                className='max-w-xs dark:bg-muted '
-                onChange={(e) => {
-                    setSearch(e.target.value);
-                    handleSearch(e.target.value);
-                }}
-                value={search}
-            />
-        </Suspense>
+        // <Suspense fallback={<div>Loading...</div>}>
+        <Input
+            type='search'
+            placeholder='find a property...'
+            className='max-w-xs dark:bg-muted '
+            onChange={(e) => {
+                setSearch(e.target.value);
+                handleSearch(e.target.value);
+            }}
+            value={search}
+        />
+        // </Suspense>
     );
 }
 
