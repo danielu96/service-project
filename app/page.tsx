@@ -4,6 +4,7 @@ import LoadingCards from '@/components/card/LoadingCards';
 import Map from '@/components/map/map';
 import Footer from '@/components/footer/Footer';
 import CategoriesList from '@/components/home/CatgoriesList';
+import ReviewContainer from '@/components/graphql/ReviewContainer';
 
 function HomePage({
   searchParams,
@@ -23,6 +24,7 @@ function HomePage({
           category={searchParams.category}
           search={searchParams.search} />
       </Suspense>
+      <ReviewContainer />
       <div className='container'><Map /></div>
 
       <Footer />
