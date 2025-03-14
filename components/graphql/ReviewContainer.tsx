@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
@@ -19,7 +18,7 @@ const FETCH_PROPERTIES = gql`
         reviewCollection {
             edges {
                 node {
-                    id                
+                    id
                     rating
                     comment
                 }
@@ -49,10 +48,13 @@ const Page: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
+        // console.log("useEffect - Data:", data); // Dodane logowanie w useEffect
+
         if (data && data.reviewCollection) {
             const interval = setInterval(() => {
                 setCurrentIndex((prevIndex) => (prevIndex + 3) % data.reviewCollection.edges.length);
-            }, 10000); // Change every 10 seconds
+                // console.log("useEffect - currentIndex:", currentIndex); // Dodane logowanie currentIndex
+            }, 10000);
 
             return () => clearInterval(interval);
         }
@@ -63,15 +65,20 @@ const Page: React.FC = () => {
     }
 
     if (propertiesError) {
+        // console.error("propertiesError:", propertiesError); // Logowanie błędu
         return <div>{propertiesError.message}</div>;
     }
 
     if (!data || !data.reviewCollection) {
+        // console.log("No data available"); // Logowanie braku danych
         return <div>No data available</div>;
     }
 
     const properties = data.reviewCollection.edges.map((edge) => edge.node);
+    // console.log("properties:", properties); // Dodane logowanie properties
     const displayedProperties = properties.slice(currentIndex, currentIndex + 3);
+
+    // console.log("displayedProperties:", displayedProperties); // Dodane logowanie wyświetlanych danych
 
     return (
         <>
@@ -83,7 +90,7 @@ const Page: React.FC = () => {
                     <div
                         className='bg-primary-foreground shadow-md rounded-lg p-6 text-center transition-opacity duration-500 ease-in-out opacity-0 animate-fadeIn'
                         key={property.id}
-                        style={{ animationDelay: `${index * 0.5}s` }} // Delay each card by 0.5s
+                        style={{ animationDelay: `${index * 0.5}s` }}
                     >
                         <h1 className='font-bold text-xl mb-2'>{property.rating}</h1>
                         <p>{property.comment}</p>
