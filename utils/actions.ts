@@ -7,9 +7,11 @@ import { auth, currentUser } from '@clerk/nextjs/server';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import {
-    imageSchema, profileSchema, validateWithZodSchema,
+    profileSchema, validateWithZodSchema,
     propertySchema, createReviewSchema,
 } from './schemas';
+// import { imageSchema } from './clientImageSchema';
+import { imageSchema } from './schemas';
 import { uploadImage } from './supabase';
 import { calculateTotals } from './calculateTotals';
 import { formatDate } from './format';
