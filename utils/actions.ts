@@ -2,19 +2,39 @@
 
 
 import db from './db';
-import { clerkClient } from '@clerk/clerk-sdk-node';
+import { clerkClient } from '@clerk/express';
 import { auth, currentUser } from '@clerk/nextjs/server';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import {
-    imageSchema, profileSchema, validateWithZodSchema,
+    profileSchema, validateWithZodSchema,
     propertySchema, createReviewSchema,
 } from './schemas';
+// import { imageSchema } from './clientImageSchema';
+import { imageSchema } from './schemas';
 import { uploadImage } from './supabase';
 import { calculateTotals } from './calculateTotals';
 import { formatDate } from './format';
 
+interface Booking {
+    createdAt: Date;
 
+}
+interface BookingsPerMonth {
+    date: string;
+    count: number;
+}
+
+interface Favorite {
+    property: {
+        id: string;
+        name: string;
+        tagline: string;
+        image: string;
+        country: string;
+        price: number;
+    };
+}
 
 export const createProfileAction = async (
     prevState: any,
@@ -373,7 +393,7 @@ export const toggleFavoriteAction = async (prevState: {
 
 export const fetchFavorites = async () => {
     const user = await getAuthUser();
-    const favorites = await db.favorite.findMany({
+    const favorites: Favorite[] = await db.favorite.findMany({
         where: {
             profileId: user.id,
         },
@@ -390,7 +410,7 @@ export const fetchFavorites = async () => {
             },
         },
     });
-    return favorites.map((favorite) => favorite.property);
+    return favorites.map((favorite: Favorite) => favorite.property);
 };
 
 export async function createReviewAction(prevState: any, formData: FormData) {
@@ -603,7 +623,7 @@ export const fetchChartsData = async () => {
     date.setMonth(date.getMonth() - 6);
     const sixMonthsAgo = date;
 
-    const bookings = await db.booking.findMany({
+    const bookings: Booking[] = await db.booking.findMany({
         where: {
             createdAt: {
                 gte: sixMonthsAgo,
@@ -613,7 +633,7 @@ export const fetchChartsData = async () => {
             createdAt: 'asc',
         },
     });
-    let bookingsPerMonth = bookings.reduce((total, current) => {
+    let bookingsPerMonth = bookings.reduce((total: BookingsPerMonth[], current: Booking) => {
         const date = formatDate(current.createdAt, true);
 
         const existingEntry = total.find((entry) => entry.date === date);
@@ -623,7 +643,9 @@ export const fetchChartsData = async () => {
             total.push({ date, count: 1 });
         }
         return total;
-    }, [] as Array<{ date: string; count: number }>);
+    }, [] as BookingsPerMonth[]);
+    // as Array<{ date: string; count: number }>
+
     return bookingsPerMonth;
 };
 

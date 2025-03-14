@@ -13,12 +13,17 @@ import {
     TableHeader,
     TableRow,
 } from '@/components/ui/table';
+interface Proposal {
+    id: string;
+    name: string;
 
+}
 
 
 async function AdminPage() {
     const data = await fetchStats();
-    const proposals = await fetchProposals();
+    const proposals: Proposal[] = await fetchProposals();
+
     if (proposals.length === 0) {
         return (
             <EmptyList
@@ -51,7 +56,7 @@ async function AdminPage() {
                         </TableRow>
                     </TableHeader>
                     <TableBody>
-                        {proposals.map((proposal) => {
+                        {proposals.map((proposal: Proposal) => {
                             const { id: propertyId, name } = proposal;
                             // const { totalNightsSum, orderTotalSum } = rental;
                             return (

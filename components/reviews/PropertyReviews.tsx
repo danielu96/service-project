@@ -1,15 +1,25 @@
 import { fetchPropertyReviews } from '@/utils/actions';
 import Title from '@/components/properties/Title';
 
+interface Review {
+    id: string;
+    profile: {
+        firstName: string;
+        profileImage: string;
+    };
+    rating: number;
+    comment: string;
+}
+
 import ReviewCard from './ReviewCard';
 async function PropertyReviews({ propertyId }: { propertyId: string }) {
-    const reviews = await fetchPropertyReviews(propertyId);
+    const reviews: Review[] = await fetchPropertyReviews(propertyId);
     if (reviews.length < 1) return null;
     return (
         <div className='mt-8'>
             <Title text='Reviews' />
             <div className='grid md:grid-cols-2 gap-8 mt-4 '>
-                {reviews.map((review) => {
+                {reviews.map((review: Review) => {
                     const { comment, rating } = review;
                     const { firstName, profileImage } = review.profile;
                     const reviewInfo = {

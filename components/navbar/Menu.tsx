@@ -1,3 +1,5 @@
+// 'use client';
+
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -12,10 +14,12 @@ import UserIcon from './UserIcon';
 import { links } from '@/utils/links';
 import SignOutLink from './SignOutLink';
 import { SignedOut, SignedIn, SignInButton, SignUpButton } from '@clerk/nextjs';
-import { auth } from '@clerk/nextjs/server';
 
-async function LinksDropdown() {
-    const isAdminUser = (await auth()).userId === process.env.ADMIN_USER_ID;
+interface LinksDropdownProps {
+    isAdminUser: boolean;
+}
+
+function LinksDropdown({ isAdminUser }: LinksDropdownProps) { // Odbieramy isAdminUser jako props
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
