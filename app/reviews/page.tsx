@@ -7,8 +7,19 @@ import ReviewCard from '@/components/reviews/ReviewCard';
 import Title from '@/components/properties/Title';
 import FormContainer from '@/components/form/FormContainer';
 import { IconButton } from '@/components/form/Buttons';
+interface Review {
+    id: string;
+    rating: number;
+    comment: string;
+    property: {
+        name: string;
+        image: string;
+    };
+}
+
+
 async function ReviewsPage() {
-    const reviews = await fetchPropertyReviewsByUser();
+    const reviews: Review[] = await fetchPropertyReviewsByUser();
     if (reviews.length === 0) return <EmptyList />;
 
     return (
