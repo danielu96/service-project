@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProductCardProps } from '@/utils/types'
+import { PropertyCardProps } from '@/utils/types'
 import Image from 'next/image';
 import Link from 'next/link';
 import FavoriteToggleButton from './FavoriteToggleButton';
@@ -7,7 +7,7 @@ import PropertyRating from './PropertyRating';
 import CountryFlagAndName from './CountryFlagAndName';
 import { formatCurrency } from '@/utils/format';
 
-const ProductCard = ({ property }: { property: ProductCardProps }) => {
+const ProductCard = ({ property }: { property: PropertyCardProps }) => {
     const { name, image, price } = property;
     const { country, id: propertyId, tagline } = property;
     return (
