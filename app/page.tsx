@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-// import ProductContainer from '@/components/home/ProductContainer';
+import ProductContainer from '@/components/home/ProductContainer';
 import LoadingCards from '@/components/card/LoadingCards';
 import Map from '@/components/map/map';
 import Footer from '@/components/footer/Footer';
@@ -20,9 +20,9 @@ function HomePage({
       <Suspense
         fallback={<LoadingCards />}
       >
-        {/* <ProductContainer
+        <ProductContainer
           category={searchParams.category}
-          search={searchParams.search} /> */}
+          search={searchParams.search} />
       </Suspense>
 
       <ReviewContainer />
