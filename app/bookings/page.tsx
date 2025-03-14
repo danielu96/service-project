@@ -18,9 +18,24 @@ import { IconButton } from '@/components/form/Buttons';
 import { fetchBookings } from '@/utils/actions';
 import { deleteBookingAction } from '@/utils/actions';
 
+interface Property {
+    id: string;
+    name: string;
+    country: string;
+}
+
+interface Booking {
+    id: string;
+    orderTotal: number;
+    totalNights: number;
+    checkIn: Date;
+    checkOut: Date;
+    property: Property;
+}
 
 async function BookingsPage() {
-    const bookings = await fetchBookings();
+    const bookings: Booking[] = await fetchBookings();
+
     if (bookings.length === 0) {
         return <EmptyList />;
     }
@@ -41,11 +56,11 @@ async function BookingsPage() {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {bookings.map((booking) => {
+                    {bookings.map((booking: Booking) => {
                         const { id, orderTotal, totalNights, checkIn, checkOut } = booking;
                         const { id: propertyId, name, country } = booking.property;
-                        const startDate = formatDate(checkIn);
-                        const endDate = formatDate(checkOut);
+                        const startDate = formatDate(new Date(checkIn));
+                        const endDate = formatDate(new Date(checkOut));
                         return (
                             <TableRow key={id}>
                                 <TableCell>
