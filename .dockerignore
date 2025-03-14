@@ -1,0 +1,30 @@
+# Ignoruj pliki node_modules
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Ignoruj pliki logów
+logs
+*.log
+
+# Ignoruj pliki środowiskowe
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+
+# Ignoruj pliki tymczasowe
+*.swp
+*.swo
+*.tmp
+
+# Ignoruj pliki build
+.next
+out
+dist
+
+# Ignoruj pliki systemowe
+.DS_Store
+Thumbs.db
