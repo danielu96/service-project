@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 // import ProductContainer from '@/components/home/ProductContainer';
 // import LoadingCards from '@/components/card/LoadingCards';
 import Map from '@/components/map/map';
