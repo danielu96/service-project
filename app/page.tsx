@@ -20,9 +20,9 @@ function HomePage({
       <Suspense
         fallback={<LoadingCards />}
       >
-        <ProductContainer
+        {/* <ProductContainer
           category={searchParams.category}
-          search={searchParams.search} />
+          search={searchParams.search} /> */}
       </Suspense>
 
       <ReviewContainer />
