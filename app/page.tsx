@@ -23,9 +23,9 @@ function HomePage({
         <ProductContainer
           category={searchParams.category}
           search={searchParams.search} />
-      </Suspense>
+      </Suspense>  
 
-      <ReviewContainer />
+      <ReviewContainer /> 
       <div className='container'><Map /></div>
 
       <Footer />
