@@ -1,6 +1,6 @@
 import type { PropertyCardProps } from '@/utils/types';
 import React from 'react'
-import ProductList from './ProductList';
+// import ProductList from './ProductList';
 import { fetchProperties } from '@/utils/actions';
 import EmptyList from './EmptyList';
 import AboutUs from './AboutUs';
@@ -26,7 +26,8 @@ async function ProductContainer(
         )
     return (
         <div className='container'>
-            <ProductList properties={properties} />
+            {/* <ProductList properties={properties} /> */}
+            <div>It wil be</div>
             <AboutUs />
         </div>
     )
